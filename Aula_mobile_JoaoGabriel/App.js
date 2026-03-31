@@ -9,8 +9,7 @@ export default function App() {
     <ScrollView style={{flex:1}}>
     <View style={styles.container}>
       <Text style={styles.txt}> TITULO </Text>
-      {drivers.map((drivers) => (
-      <Card>
+      {drivers.map((drivers) => (      <Card>
         <Card.Cover source={{uri: drivers.image}}></Card.Cover>
          <Card.Content style={styles.cards}>
           <Text style={styles.txt} >{drivers.name}</Text>
