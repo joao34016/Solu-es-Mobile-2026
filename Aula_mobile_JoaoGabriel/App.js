@@ -1,54 +1,20 @@
-import {View, Text, StyleSheet, ScrollView} from 'react-native'
-import { Button, Card } from 'react-native-paper';
-import { useState } from 'react';
-import { drivers } from './components/drivers';
-// const drivers = drivers[1]
-export default function App() {
-  
-  return (
-    <ScrollView style={{flex:1}}>
-    <View style={styles.container}>
-      <Text style={styles.txt}> TITULO </Text>
-      {drivers.map((drivers) => (      <Card>
-        <Card.Cover source={{uri: drivers.image}}></Card.Cover>
-         <Card.Content style={styles.cards}>
-          <Text style={styles.txt} >{drivers.name}</Text>
-          <Text style={styles.txt} >{drivers.description}</Text>
-          <Text style={styles.txt} >{drivers.team}</Text>
-          <Text style={styles.txt} >{drivers.country}</Text>
-          <Text style={styles.txt} >{drivers.stars}</Text>
+import { NavigationContainer } from "@react-navigation/native"
+import { createStackNavigator } from "@react-navigation/stack"
+import Login from "./Screens/Login";
+import Home from "./Screens/Home";
+import Pessoas from "./Screens/Pessoas"
 
-        
-        </Card.Content>
-      </Card>
-      ))}
-      </View>
-      </ScrollView>
-    
-       
-  );
+
+export default function App(){
+  const Stack = createStackNavigator();
+  return(
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login Users" component={Login}/>
+        <Stack.Screen name="Home Screen" component={Pessoas}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+
+  
 }
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  txt:{
-    fontSize: 30,
-  },
-  lado:{
-    flexDirection: 'row',
-    gap: 5
-  },
-  cards:{
-    alignItems: 'center'
-    
-  }
-})
-
-  
-
-

@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, TextInput, Button} from 'react-native';
 
 
-export default function Login() { 
+export default function Login({navigation}) { 
   return (
     <View style={styles.container}>
       <Text style={styles.txt_title}>Tela de Login</Text>
@@ -16,6 +16,7 @@ export default function Login() {
       />
       <Button
       title='Logar'
+      onPress={() => navigation.navigate('Home Screen') }
       />
     </View>
     
