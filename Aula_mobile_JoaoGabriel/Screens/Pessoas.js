@@ -41,9 +41,11 @@ const styles = StyleSheet.create({
   lado:{
     flexDirection: 'row',
     gap: 5
+    
   },
   cards:{
-    alignItems: 'center'
+    alignItems: 'center',
+    
     
   }
 })
