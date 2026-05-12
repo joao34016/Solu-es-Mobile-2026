@@ -5,6 +5,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import Entypo from '@expo/vector-icons/Entypo';
 import Images from "./components/image";
+import ExemplOAsyncStorage from "./Screens/ExemploAsyncStorage";
+import Exemplo1AsyncStorage from "./Screens/ExemploAsyncStorage1";
+import Produtos from "./Screens/ProdutosLite";
 
 function TabNavigate(){
   const Tab = createBottomTabNavigator();
@@ -13,6 +16,10 @@ function TabNavigate(){
     <Tab.Navigator>
       <Tab.Screen name='Home' component={Pessoas}/>
       <Tab.Screen name="Imagens" component={Images}/>
+      <Tab.Screen name="Async" component={Exemplo1AsyncStorage}/>
+      <Tab.Screen name="Produtos" component={Produtos}/>
+
+
     </Tab.Navigator>
 
   )
